@@ -23,6 +23,8 @@ Mainflux offers a wide range of features, including support for MQTT, WS, COAP a
 
 ![Mainflux Architecture](https://i.imgur.com/RczCKju.png)
 
+![MF Components](https://i.imgur.com/Bu2pJ1k.png)
+
 [Ref](https://docs.mainflux.io/architecture/)
 
 ## System requirements
