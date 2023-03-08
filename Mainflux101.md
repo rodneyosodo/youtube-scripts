@@ -1,5 +1,12 @@
 # Introduction to Mainflux
 
+- [ ] What is Mainflux?
+- [ ] Why use Mainflux?
+- [ ] Features of Mainflux
+- [ ] System requirements
+- [ ] Installing Mainflux on different platforms
+- [ ] Setting up the environment
+
 ## What is Mainflux?
 
 Mainflux is an open-source IoT platform designed to simplify the process of connecting, managing and analyzing data from IoT devices. It is built on modern, cloud-native technologies and is highly scalable, flexible, and customizable to fit the needs of various IoT applications.
