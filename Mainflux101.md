@@ -31,36 +31,59 @@ https://docs.mainflux.io/getting-started/
 Once Mainflux is installed, you need to set up the environment and configure the platform to fit your specific needs. This includes configuring the database, setting up authentication, creating Things and Channels, and publishing and subscribing to data.
 
 1. [Install Docker](https://docs.docker.com/get-docker/)
+
+```bash
+sudo apt install docker.io docker
+```
+
 2. [Install Docker Compose](https://docs.docker.com/compose/install/)
+
+```bash
+sudo apt install docker-compose
+```
+
 3. [Install Go](https://golang.org/doc/install)
-4. Check Installations version
+
+```bash
+wget https://go.dev/dl/go1.20.2.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.2.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+```
+
+4. [Install Make](https://linuxhint.com/install-make-ubuntu/)
+
+```bash
+sudo apt install make
+```
+
+5. Check Installations version
 
 ```bash
 ╰──➤ docker version
 Client:
- Version:           20.10.12
+ Version:           20.10.16
  API version:       1.41
- Go version:        go1.17.3
- Git commit:        20.10.12-0ubuntu4
- Built:             Mon Mar  7 17:10:06 2022
+ Go version:        go1.18.1
+ Git commit:        20.10.16-0ubuntu1
+ Built:             Thu May 12 20:53:23 2022
  OS/Arch:           linux/amd64
  Context:           default
  Experimental:      true
 
 Server:
  Engine:
-  Version:          20.10.12
+  Version:          20.10.16
   API version:      1.41 (minimum version 1.12)
-  Go version:       go1.17.3
-  Git commit:       20.10.12-0ubuntu4
-  Built:            Mon Mar  7 15:57:50 2022
+  Go version:       go1.18.1
+  Git commit:       20.10.16-0ubuntu1
+  Built:            Thu May 12 20:04:31 2022
   OS/Arch:          linux/amd64
   Experimental:     false
  containerd:
-  Version:          1.5.9-0ubuntu3.1
+  Version:          1.6.4-0ubuntu1
   GitCommit:        
  runc:
-  Version:          1.1.0-0ubuntu1.1
+  Version:          1.1.2-0ubuntu1
   GitCommit:        
  docker-init:
   Version:          0.19.0
@@ -69,21 +92,33 @@ Server:
 ╰──➤ docker-compose version                                           
 docker-compose version 1.29.2, build unknown
 docker-py version: 5.0.3
-CPython version: 3.10.6
-OpenSSL version: OpenSSL 3.0.2 15 Mar 2022
+CPython version: 3.10.7
+OpenSSL version: OpenSSL 3.0.5 5 Jul 2022
 
 ╰──➤ go version                  
-go version go1.19.4 linux/amd64
+go version go1.20.2 linux/amd64
 
 ```
 
 5. Clone Mainflux Repo
 
 ```bash
-git clone git@github.com:mainflux/mainflux.git
+git clone https://github.com/mainflux/mainflux.git
 ```
 
-6. Install mainflux-cli
+6. Start Mainflux
+
+```bash
+make run
+```
+
+7. [Optional] - Build mainflux services on your own
+
+```bash
+make all && make dockers
+```
+
+8. Install mainflux-cli
 
 ```bash
 wget -O- https://github.com/mainflux/mainflux/releases/download/0.13.0/mainflux-cli_0.13.0_linux-amd64.tar.gz | tar xvz -C $GOBIN
